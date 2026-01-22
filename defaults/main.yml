@@ -54,11 +54,11 @@ owncast_container_rtmp_host_bind_port: "{{ owncast_container_rtmp_port }}"
 owncast_container_network: "{{ owncast_identifier }}"
 
 # The HTTP port number in the container
-owncast_container_http_port: 8080
+owncast_container_http_port: 8081
 
 # The RTMP port number in the container
 # Changing this could make it impossible to connect your streaming software to your server!
-owncast_container_rtmp_port: 1935
+owncast_container_rtmp_port: 1936
 
 # A list of additional container networks that the container would be connected to.
 # The role does not create these networks, so make sure they already exist.
