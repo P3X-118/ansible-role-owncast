@@ -27,7 +27,7 @@ owncast_hostname: ""
 
 owncast_path_prefix: /
 
-owncast_container_image: "{{ owncast_container_image_registry_prefix }}gabekangas/owncast:{{ owncast_container_image_tag }}"
+owncast_container_image: "{{ owncast_container_image_registry_prefix }}legitservices/owncast:{{ owncast_container_image_tag }}"
 owncast_container_image_tag: "{{ owncast_version }}"
 owncast_container_image_registry_prefix: "{{ owncast_container_image_registry_prefix_upstream }}"
 owncast_container_image_registry_prefix_upstream: "{{ owncast_container_image_registry_prefix_upstream_default }}"
