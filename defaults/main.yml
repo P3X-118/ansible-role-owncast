@@ -8,11 +8,11 @@
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
 ---
-# Project source code URL: https://github.com/owncast/owncast
+# Project source code URL: https://github.com/P3X-118/owncast
 
 owncast_enabled: true
 
-owncast_identifier: owncast
+owncast_identifier: okast
 owncast_base_path: "/{{ owncast_identifier }}"
 owncast_data_path: "{{ owncast_base_path }}/data"
 
