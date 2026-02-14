@@ -6,7 +6,7 @@
 ---
 - name: Check existence of Owncast systemd service
   ansible.builtin.stat:
-    path: "{{ devture_systemd_docker_base_systemd_path }}/{{ owncast_identifier }}.service"
+    path: "{{ sysd_docker_path }}/{{ owncast_identifier }}.service"
   register: owncast_service_stat
 
 - name: Uninstall Owncast systemd services and files
@@ -21,20 +21,20 @@
 
     - name: Ensure Owncast systemd service does not exist
       ansible.builtin.file:
-        path: "{{ devture_systemd_docker_base_systemd_path }}/{{ owncast_identifier }}.service"
+        path: "{{ sysd_docker_path }}/{{ owncast_identifier }}.service"
         state: absent
 
     - name: Ensure Owncast container network does not exist via community.docker.docker_network
-      when: devture_systemd_docker_base_container_network_creation_method == 'ansible-module'
+      when: sysd_docker_net_creation_method == 'ansible-module'
       community.docker.docker_network:
         name: "{{ owncast_container_network }}"
         state: absent
 
     - name: Ensure Owncast container network does not exist via ansible.builtin.command
-      when: devture_systemd_docker_base_container_network_creation_method == 'command'
+      when: sysd_docker_net_creation_method == 'command'
       ansible.builtin.command:
         cmd: >-
-          {{ devture_systemd_docker_base_host_command_docker }} network rm
+          {{ sysd_docker_host_command }} network rm
           {{ owncast_container_network }}
       register: network_deletion_result
       changed_when: owncast_container_network in network_deletion_result.stdout
