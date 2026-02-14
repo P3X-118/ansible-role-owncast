@@ -82,7 +82,7 @@ owncast_container_additional_volumes_custom: []
 # See `../templates/labels.j2` for details.
 #
 # To inject your own other container labels, see `owncast_container_labels_additional_labels_custom`.
-owncast_container_labels_traefik_enabled: true
+owncast_container_labels_traefik_enabled: false
 owncast_container_labels_traefik_docker_network: "{{ owncast_container_network }}"
 owncast_container_labels_traefik_hostname: "{{ owncast_hostname }}"
 # The path prefix must either be `/` or not end with a slash (e.g. `/owncast`).
